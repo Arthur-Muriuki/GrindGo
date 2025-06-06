@@ -21,7 +21,7 @@ from .forms import RoutineForm
 @login_required
 def routine_list(request):
     routines = Routine.objects.filter(user=request.user)
-    return render(request, 'routine/routine_list.html', {'routines': routines})
+    return render(request, 'Routineapp/routine_list.html', {'routines': routines})
 
 @login_required
 def routine_create(request):
@@ -34,7 +34,7 @@ def routine_create(request):
             return redirect('routine_list')
     else:
         form = RoutineForm()
-    return render(request, 'routine/routine_form.html', {'form': form})
+    return render(request, 'Routineapp/routine_form.html', {'form': form})
 
 @login_required
 def routine_update(request, pk):
@@ -46,7 +46,7 @@ def routine_update(request, pk):
             return redirect('routine_list')
     else:
         form = RoutineForm(instance=routine)
-    return render(request, 'routine/routine_form.html', {'form': form})
+    return render(request, 'Routineapp/routine_form.html', {'form': form})
 
 @login_required
 def routine_delete(request, pk):
@@ -54,4 +54,4 @@ def routine_delete(request, pk):
     if request.method == 'POST':
         routine.delete()
         return redirect('routine_list')
-    return render(request, 'routine/routine_confirm_delete.html', {'routine': routine})
+    return render(request, 'Routineapp/routine_confirm_delete.html', {'routine': routine})
