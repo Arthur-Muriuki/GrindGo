@@ -64,3 +64,32 @@ button:hover {
     border-left: 4px solid #5d4037;
     border-radius:4px;
 }
+
+/* For error box */
+.form-errors {
+    color: red;
+    border: 1px solid red;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #ffe6e6;
+    border-radius: 4px;
+}
+
+/* Form container */
+.routine-form {
+    max-width: 500px;
+}
+
+/* Submit button */
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}

@@ -2,15 +2,16 @@
 
 {% extends 'Routineapp/base.html' %}
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% block content %}
     <h2>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Routine</h2>
 
     {% if form.errors %}
-        <div style="color: red; border: 1px solid red; padding: 10px; margin-bottom: 15px;">
+        <div class="form-errors">
             Please fix the errors below:
             <ul>
                 {% for field in form %}
-                    {% for error in field. errors %}
+                    {% for error in field.errors %}
                         <li><strong>{{ field.label }}:</strong> {{ error }}</li>
                     {% endfor %}
                 {% endfor %}
@@ -21,18 +22,9 @@
         </div>
     {% endif %}
 
-    <form method="post" action="" style="max-width: 500px;">
+    <form method="post" action="" class="routine-form">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" style="
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        ">
-            Save Routine
-        </button>
+        <button type="submit" class="submit-button">Save Routine</button>
     </form>
 {% endblock %}
