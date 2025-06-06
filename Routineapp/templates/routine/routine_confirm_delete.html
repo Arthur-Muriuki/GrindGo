@@ -1,6 +1,7 @@
 <!-- templates/routine/routine_confirm_delete.html -->
 {% extends 'routine/base.html' %}
 {% block content %}
+    {% load static %}
 <h2>Delete Routine</h2>
 <p>Are you sure you want to delete <strong>{{ routine.title }}</strong> for {{ routine.day }} at {{ routine.time }}?</p>
 <form method="post">

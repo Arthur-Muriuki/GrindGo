@@ -1,6 +1,8 @@
 <!-- templates/routine/routine_form.html -->
+
 {% extends 'routine/base.html' %}
 {% block content %}
+    {% load static %}
 <h2>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Routine</h2>
 <form method="post">
     {% csrf_token %}
