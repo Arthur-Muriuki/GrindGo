@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<!-- templates/routine/routine_confirm_delete.html -->
+{% extends 'routine/base.html' %}
+{% block content %}
+<h2>Delete Routine</h2>
+<p>Are you sure you want to delete <strong>{{ routine.title }}</strong> for {{ routine.day }} at {{ routine.time }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+    <a href="{% url 'routine_list' %}">Cancel</a>
+</form>
+{% endblock %}

@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!-- templates/routine/routine_list.html -->
+{% extends 'routine/base.html' %}
+{% block content %}
+<h2>Your Weekly Routine</h2>
 
-</body>
-</html>
+{% if routines %}
+    <ul class="routine-list">
+        {% for routine in routines %}
+            <li>
+                <strong>{{ routine.day }}:</strong> {{ routine.title }} at {{ routine.time }} <br>
+                <small>{{ routine.description }}</small><br>
+                <a href="{% url 'routine_update' routine.pk %}">Edit</a> |
+                <a href="{% url 'routine_delete' routine.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No routines yet. <a href="{% url 'routine_create' %}">Add one</a>!</p>
+{% endif %}
+{% endblock %}
