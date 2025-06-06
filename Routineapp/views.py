@@ -1,6 +1,11 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Routine
+from .forms import RoutineForm
+
 
 def register_view(request):
     if request.method == 'POST':
@@ -13,10 +18,6 @@ def register_view(request):
         form = RegisterForm()
     return render(request, 'routine/register.html', {'form': form})
 
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import Routine
-from .forms import RoutineForm
 
 @login_required
 def routine_list(request):
