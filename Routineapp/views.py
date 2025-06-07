@@ -18,7 +18,9 @@ def register_view(request):
         form = RegisterForm()
     return render(request, 'routine/register.html', {'form': form})
 
-
+@login_required
+def home_view(request):
+    return render(request, 'Routineapp/home.html')
 @login_required
 def routine_list(request):
     routines = Routine.objects.filter(user=request.user)

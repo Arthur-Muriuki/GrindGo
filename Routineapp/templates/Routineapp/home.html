@@ -1,0 +1,42 @@
+{% extends 'Routineapp/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <!-- AOS Animation CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <section class="hero" data-aos="fade-up">
+        <div class="hero-content">
+            <h1>Welcome back, {{ user.first_name|default:user.username }} 👋</h1>
+            <p class="subtitle">Ready to crush your next routine?</p>
+            <div class="actions">
+                <a href="{% url 'routine_create' %}" class="btn primary" data-aos="zoom-in">Create a New Routine</a>
+                <a href="{% url 'routine_list' %}" class="btn secondary" data-aos="zoom-in" data-aos-delay="150">View My Routines</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card" data-aos="fade-up">
+            <h2>🧠 Smart Tracking</h2>
+            <p>Track your gym sessions and visualize progress like a beast with graphs and milestones.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <h2>🗓️ Personalized Scheduling</h2>
+            <p>Book routines based on your goals — strength, cardio, flex days, you name it.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <h2>🎯 Goal Focused</h2>
+            <p>Set weekly goals and get gentle nudges to stay on track. Your grind, gamified.</p>
+        </div>
+    </section>
+
+    <!-- AOS Animation JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+{% endblock %}
