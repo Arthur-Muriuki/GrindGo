@@ -1,0 +1,90 @@
+.auth-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #f4f4f7;
+}
+
+.auth-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auth-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e1e2f;
+    margin-bottom: 10px;
+}
+.auth-title .highlight {
+    color: #ff416c;
+}
+
+.auth-subtitle {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+.auth-form {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+.form-group input:focus {
+    border-color: #ff416c;
+    outline: none;
+}
+
+.btn-submit {
+    background: #ff416c;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.btn-submit:hover {
+    background: #e63a5e;
+}
+
+.form-footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+.form-footer a {
+    color: #ff416c;
+    text-decoration: none;
+    font-weight: 600;
+}
+.form-footer a:hover {
+    text-decoration: underline;
+}
